@@ -6,7 +6,7 @@ import m2ice.model.Bill;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService
+@WebService(serviceName = "SendBillService")
 public class SendBillService {
     private final Context context;
 
