@@ -4,9 +4,12 @@ public class Service {
 
     String name;
     String userId;
+    boolean done;
+
     public Service(String name, String userId){
         this.name = name;
         this.userId = userId;
+        this.done = false;
     }
 
     public String getName() {
