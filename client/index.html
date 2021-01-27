@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <title>Agence de vente en ligne de liste de personnes pouvant rendre un service</title>
+  </head>
+  <body>
+    <h1>Agence de vente en ligne de liste de personnes pouvant rendre un service</h1>
+    <label for="name">Nom du service:</label>
+
+    <input type="text" id="serviceName" name="serviceName" required>
+    <button type="button" onclick="search()">
+      Rechercher
+    </button>
+    <ul id="listuser">
+
+    </ul>
+    <script>
+      function search() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", 'http://localhost:8080/tp-soa-note/ListServicesByUser', true);
+
+        //Envoie les informations du header adaptées avec la requête
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function() { //Appelle une fonction au changement d'état.
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            myFunction(this);
+          }
+        }
+        xhr.send("foo=bar&lorem=ipsum");
+
+        console.log(document.getElementById("serviceName").value);
+      }
+
+      function myFunction(xml) {
+        console.log('my func');
+        var xmlDoc = xml.responseXML;
+        var x = xmlDoc.getElementsByTagName('return')[0];
+        var y = x.childNodes[0];
+        var html ="";
+        y.map((elemt) =>{
+          html += `<li>${elemt}</li>`
+        } )
+        document.getElementById("listuser").innerhtml = html;
+      }
+
+    </script>
+  </body>
+</html>
