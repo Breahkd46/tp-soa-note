@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Context{
     private static Context instance;
-    private List<User> users = new ArrayList<User>();
-    private List<Service> services = new ArrayList<Service>();
-    private List<Bill> bills = new ArrayList<Bill>();
+    private List<User> users;
+    private List<Service> services ;
+    private List<Bill> bills ;
 
      private Context(){
         this.users = new ArrayList<User>();
