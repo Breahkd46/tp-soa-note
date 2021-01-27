@@ -10,17 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebService(serviceName = "listuser")
-public class ListUserService {
+public class ListUserByService {
 
     private final Context context;
 
-    public ListUserService() {
+    public ListUserByService() {
         this.context = Context.getContext();
     }
 
 
     @WebMethod
-    public List<String> listUserService(String serviceName) {
+    public List<String> listUserByService(String serviceName) {
         List<String> userIds = new ArrayList<>();
         for (Service s : this.context.getServices()){
             if(s.getName().equals(serviceName)){
