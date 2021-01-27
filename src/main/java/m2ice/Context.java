@@ -17,6 +17,14 @@ public class Context{
         this.users = new ArrayList<User>();
         this.services = new ArrayList<Service>();
         this.bills = new ArrayList<Bill>();
+
+        User user = new User("coucou");
+
+        this.users.add(user);
+
+        Service service = new Service("jardin", user.getId());
+
+        this.services.add(service);
     }
 
     public static Context getContext(){

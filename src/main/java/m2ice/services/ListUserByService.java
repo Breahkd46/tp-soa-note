@@ -8,6 +8,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @WebService(serviceName = "listuser")
 public class ListUserByService {
@@ -27,6 +28,12 @@ public class ListUserByService {
                 userIds.add(s.getUserId());
             }
         }
+        return userIds;
+    }
+
+    @WebMethod
+    public List<String> listUser() {
+        List<String> userIds = this.context.getUsers().stream().map(user -> user.id).collect(Collectors.toList());
         return userIds;
     }
 }
