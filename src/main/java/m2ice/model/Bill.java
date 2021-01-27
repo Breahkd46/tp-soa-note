@@ -3,10 +3,12 @@ package m2ice.model;
 public class Bill {
     String userId;
     String serviceName;
+    String userReturnId;
 
-    public Bill(String userId , String serviceName){
+    public Bill(String userId , String serviceName, String userReturnId){
         this.serviceName = serviceName;
         this.userId = userId;
+        this.userReturnId = userReturnId;
     }
 
     public String getUserId() {
@@ -23,5 +25,13 @@ public class Bill {
 
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
+    }
+
+    public String getUserReturnId() {
+        return userReturnId;
+    }
+
+    public void setUserReturnId(String userReturnId) {
+        this.userReturnId = userReturnId;
     }
 }
