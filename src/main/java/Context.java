@@ -1,7 +1,6 @@
-package main.java;
-import main.java.model.Bill;
-import main.java.model.Service;
-import main.java.model.User;
+import model.Bill;
+import model.Service;
+import model.User;
 
 import java.util.ArrayList;
 import java.util.List;
