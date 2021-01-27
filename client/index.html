@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Agence de vente en ligne de liste de personnes pouvant rendre un service</h1>
-    <label for="name">Nom du service:</label>
+    <label >Nom du service:</label>
 
     <input type="text" id="serviceName" name="serviceName" required>
     <button type="button" onclick="search()">
@@ -25,7 +25,7 @@
 
         xhr.onreadystatechange = function() { //Appelle une fonction au changement d'état.
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            myFunction(this);
+            handleXML(this);
           }
         }
         xhr.send("foo=bar&lorem=ipsum");
@@ -33,7 +33,7 @@
         console.log(document.getElementById("serviceName").value);
       }
 
-      function myFunction(xml) {
+      function handleXML(xml) {
         console.log('my func');
         var xmlDoc = xml.responseXML;
         var x = xmlDoc.getElementsByTagName('return')[0];
