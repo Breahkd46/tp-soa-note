@@ -8,7 +8,7 @@ import javax.jws.WebService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebService(serviceName = "propose")
+@WebService(serviceName = "ListServicesByUser")
 public class ListServicesByUser {
 
     private final Context context;
@@ -19,9 +19,9 @@ public class ListServicesByUser {
 
 
     @WebMethod
-    public List<Service> listServicesByUser(String userId) {
-        List<Service> services = this.context.getServices().stream()
-                .filter(serv -> serv.getUserId().equals(userId)).collect(Collectors.toList());
+    public List<String> listServicesByUser(String userId) {
+        List<String> services = this.context.getServices().stream()
+                .filter(serv -> serv.getUserId().equals(userId)).map(Service::getName).collect(Collectors.toList());
         return services;
     }
 }
