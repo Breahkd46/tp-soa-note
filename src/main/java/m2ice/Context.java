@@ -1,6 +1,8 @@
-import model.Bill;
-import model.Service;
-import model.User;
+package m2ice;
+
+import m2ice.model.Bill;
+import m2ice.model.Service;
+import m2ice.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ public class Context{
         this.bills = new ArrayList<Bill>();
     }
 
-    public Context getContext(){
+    public static Context getContext(){
         if(instance == null){
             instance = new Context();
         }

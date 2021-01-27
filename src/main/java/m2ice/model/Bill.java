@@ -1,4 +1,4 @@
-package model;
+package m2ice.model;
 
 public class Bill {
     String userId;
